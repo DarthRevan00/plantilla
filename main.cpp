@@ -1,11 +1,16 @@
 #include <iostream>
-#include <fmt/core.h>
+#include <random>
+#include "tour.h"
+#include "rnd.h"
 
+using namespace std;
 int main()
 {
-	using fmt::format;
+	// Tour t {532};
+	// t.visualizar();
+	GTRandom rnd {100};
+	cout<<"random: "<<rnd.getNextRandom()<<endl;
 
-	std::cout<<format("Gats was here {}!\n",123356);
 	return 0;
 }
 
