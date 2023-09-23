@@ -2,15 +2,15 @@
 #include <random>
 #include "tour.h"
 #include "rnd.h"
+#include <chrono>
+#include <ctime>
 
 using namespace std;
 int main()
 {
-	// Tour t {532};
-	// t.visualizar();
-	GTRandom rnd {100};
-	cout<<"random: "<<rnd.getNextRandom()<<endl;
-
+	Tour t {532};
+	t.shuffleTour();
+	t.visualizar();
 	return 0;
 }
 

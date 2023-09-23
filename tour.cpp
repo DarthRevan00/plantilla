@@ -6,8 +6,9 @@
 using std::generate;
 using std::cout;
 using std::endl;
+using std::swap;
 
-Tour::Tour(int nCiudades):m_seq_ciudades(nCiudades){
+Tour::Tour(int nCiudades):m_seq_ciudades(nCiudades),m_rnd(1,nCiudades-1){
     int i {0};
     generate(m_seq_ciudades.begin(),m_seq_ciudades.end(),[&i](){
         return i++;
@@ -22,4 +23,12 @@ void Tour::visualizar() {
         i++;
     }
     cout<<"]"<<endl;
+}
+
+void Tour::shuffleTour(const int veces) {
+    for (int i=0;i<veces;i++){
+        int e1=m_rnd.getNextRandom();
+        int e2=m_rnd.getNextRandom();
+        swap(m_seq_ciudades[e1],m_seq_ciudades[e2]);
+    }
 }
